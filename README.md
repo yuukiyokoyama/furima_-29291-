@@ -94,8 +94,8 @@ Things you may want to cover:
 | postal code | string | null: false |
 | prefectures | integer | null: false |
 | city | string | null: false |
-| address | integer | null: false |
-| building name | integer |  |
+| address | string | null: false |
+| building name | string |  |
 | phone number | string | null: false |
 
 ### Association
