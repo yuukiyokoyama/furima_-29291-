@@ -50,11 +50,11 @@ Things you may want to cover:
 | name | string | null: false |
 | explanation | string | null: false |
 | value | integer | null: false |
-| category | string | null: false |
-| condition | string | null: false |
-| delivery_fee | integer | null: false |
-| shipping_origin | string | null: false |
-| days_until_shipping | string | null: false |
+| category | integer | id: 1 |
+| condition | integer | id: 2 |
+| delivery_fee | integer | id: 3 |
+| shipping_origin | integer | id: 4 |
+| days_until_shipping | integer | id: 5 |
 | user | references | null: false,foreign_key: true  |
 
 ### Association
@@ -73,3 +73,27 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :item
+
+##  buyersテーブル
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| credit card information | integer | null: false |
+| expiration date | integer | null: false |
+| security code | integer | null: false |
+
+### Association
+
+- has_one:Shipping address
+
+##  Shipping addressテーブル
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| postal code | integer | null: false |
+| prefectures | string | null: false |
+| city | string | null: false |
+| address | integer | null: false |
+| building name | integer | null: false |
+| phone number | integer | null: false |
+
+### Association
+- has_one：buyer
