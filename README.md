@@ -34,23 +34,22 @@ Things you may want to cover:
 | password | string | null: false |
 | family_name | string | null: false |
 | first_name | string | null: false |
-| フリガナ(read_family) | string | null: false |
-| フリガナ(read_first) | string | null: false |
-| birthday | integer | null: false |
+| family_name_kana　| string | null: false |
+| first_name_kana | string | null: false |
+| birthday | date | null: false |
 
 ### Association
 
-- has_many :itemss
+- has_many :items
 - has_many :comments
 
 ## items テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| item_photo | string | null: false |
-| item_name | string | null: false |
+| photo | string | null: false |
+| name | string | null: false |
 | explanation | string | null: false |
 | value | integer | null: false |
-| exhibitor | string | null: false |
 | category | string | null: false |
 | condition | string | null: false |
 | delivery_fee | integer | null: false |
@@ -60,17 +59,17 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 - has_many :comments
 
 ## comments テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| content | string | null: false |
+| content | text | null: false |
 | user | string | null: false,foreign_key: true |
 | item | string | null: false,foreign_key: true |
 
 ### Association
 
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
