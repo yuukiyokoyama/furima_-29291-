@@ -81,7 +81,6 @@ Things you may want to cover:
 | -------- | ------ | ----------- |
 | user | references | null: false,foreign_key: true |
 | item | references | null: false,foreign_key: true |
-| shipping_address | references | null: false,foreign_key: true |
 
 ### Association
 
@@ -98,6 +97,7 @@ Things you may want to cover:
 | address | string | null: false |
 | building name | string |  |
 | phone number | string | null: false |
+|item_purchasere | ferences | null: false,foreign_key: true |
 
 ### Association
 - belongs_to:item_purchas
