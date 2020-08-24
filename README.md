@@ -40,16 +40,16 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :user_items
+- has_one :user_item
+- has_many :items
 - has_many :comments
-- has_many :items, through: :user_items
 
 ## items テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | photo | string | null: false |
 | name | string | null: false |
-| explanation | string | null: false |
+| explanation | text | null: false |
 | value | integer | null: false |
 | category | integer | null: false |
 | condition | integer | null: false |
@@ -60,7 +60,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :user_items
+- has_one :user_item
 - belongs_to :user
 - has_many :comments
 
@@ -91,12 +91,12 @@ Things you may want to cover:
 ##  shipping_addressesテーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| postal code | string | null: false |
-| prefectures | string | null: false |
+| postal code | integer | null: false |
+| prefectures | integer | null: false |
 | city | string | null: false |
 | address | integer | null: false |
 | building name | integer | null: false |
 | phone number | string | null: false |
 
 ### Association
-- has_one:item_purchas
+- belongs_to:item_purchas
