@@ -40,8 +40,9 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :items
+- has_many :user_items
 - has_many :comments
+- has_many :items, through: :user_items
 
 ## items テーブル
 | Column   | Type   | Options     |
@@ -50,15 +51,16 @@ Things you may want to cover:
 | name | string | null: false |
 | explanation | string | null: false |
 | value | integer | null: false |
-| category | integer | id: 1 |
-| condition | integer | id: 2 |
-| delivery_fee | integer | id: 3 |
-| shipping_origin | integer | id: 4 |
-| days_until_shipping | integer | id: 5 |
+| category | integer | null: false |
+| condition | integer | null: false |
+| delivery_fee | integer | null: false |
+| shipping_origin | integer | null: false |
+| days_until_shipping | integer | null: false |
 | user | references | null: false,foreign_key: true  |
 
 ### Association
 
+- has_many :user_items
 - belongs_to :user
 - has_many :comments
 
@@ -74,18 +76,18 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-##  buyersテーブル
+##  user_itemsテーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| credit card information | integer | null: false |
-| expiration date | integer | null: false |
-| security code | integer | null: false |
+| user | string | null: false,foreign_key: true |
+| item | string | null: false,foreign_key: true |
 
 ### Association
 
-- has_one:Shipping address
+- belongs_to :user
+- belongs_to :item
 
-##  Shipping addressテーブル
+##  Shipping_addressesテーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | postal code | integer | null: false |
@@ -96,4 +98,4 @@ Things you may want to cover:
 | phone number | integer | null: false |
 
 ### Association
-- has_one：buyer
+- has_one：user
