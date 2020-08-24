@@ -40,7 +40,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_one :user_item
+- has_many :user_item
 - has_many :items
 - has_many :comments
 
@@ -91,11 +91,11 @@ Things you may want to cover:
 ##  shipping_addressesテーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| postal code | integer | null: false |
+| postal code | string | null: false |
 | prefectures | integer | null: false |
 | city | string | null: false |
 | address | integer | null: false |
-| building name | integer | null: false |
+| building name | integer |  |
 | phone number | string | null: false |
 
 ### Association
