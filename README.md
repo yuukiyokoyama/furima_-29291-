@@ -76,26 +76,27 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-##  user_itemsテーブル
+##  item_purchasesテーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| user | string | null: false,foreign_key: true |
-| item | string | null: false,foreign_key: true |
+| user | references | null: false,foreign_key: true |
+| item | references | null: false,foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
+- has_one:shipping_address
 
-##  Shipping_addressesテーブル
+##  shipping_addressesテーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| postal code | integer | null: false |
+| postal code | string | null: false |
 | prefectures | string | null: false |
 | city | string | null: false |
 | address | integer | null: false |
 | building name | integer | null: false |
-| phone number | integer | null: false |
+| phone number | string | null: false |
 
 ### Association
-- has_one：user
+- has_one:item_purchas
