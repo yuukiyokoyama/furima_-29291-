@@ -40,7 +40,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :user_items
+- has_many :item_purchases
 - has_many :items
 - has_many :comments
 
@@ -60,7 +60,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_one :user_item
+- has_one :item_purchase
 - belongs_to :user
 - has_many :comments
 
