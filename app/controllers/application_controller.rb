@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :set_tweet, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :basic_auth
+  before_action :authenticate_user!
 
   private
 
