@@ -91,13 +91,13 @@ Things you may want to cover:
 ##  shipping_addressesテーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| postal code | string | null: false |
+| postal_code | string | null: false |
 | prefectures | integer | null: false |
 | city | string | null: false |
 | address | string | null: false |
 | building name | string |  |
-| phone number | string | null: false |
-| item_purchasere | ferences | null: false,foreign_key: true |
+| phone_number | string | null: false |
+| item_purchasere | rferences | null: false,foreign_key: true |
 
 ### Association
 - belongs_to:item_purchas
