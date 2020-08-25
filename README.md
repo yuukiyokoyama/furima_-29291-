@@ -40,7 +40,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :user_item
+- has_many :user_items
 - has_many :items
 - has_many :comments
 
@@ -97,7 +97,7 @@ Things you may want to cover:
 | address | string | null: false |
 | building name | string |  |
 | phone number | string | null: false |
-|item_purchasere | ferences | null: false,foreign_key: true |
+| item_purchasere | ferences | null: false,foreign_key: true |
 
 ### Association
 - belongs_to:item_purchas
