@@ -6,11 +6,16 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
-  validates :password, presence: true, length: { minimum: 6 }, format: { with: /\A[a-zA-Z0-9]+\z/	}
+  PASSWORD_REGEX = /\A[a-z]+[\d]+[a-z\d]+\z/.freeze
+  validates :password, presence: true, length: { minimum: 6 }, format: { with: PASSWORD_REGEX	}
 
-  validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
-  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
-  validates :family_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
-  validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+  FAMILY_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
+  validates :family_name, presence: true, format: { with: FAMILY_NAME_REGEX }
+  FIRST_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
+  validates :first_name, presence: true, format: { with: FIRST_NAME_REGEX }
+  FAMILY_NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
+  validates :family_name_kana, presence: true, format: { with: FAMILY_NAME_KANA_REGEX }
+  FIRST_NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
+  validates :first_name_kana, presence: true, format: { with: FIRST_NAME_KANA_REGEX }
   validates :birthday, presence: true
 end
