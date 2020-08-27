@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-  end 
+  end
 
   def new
   end
@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def ppost_params
     params.require(:post).permit(:name, :image, :text)
   end
