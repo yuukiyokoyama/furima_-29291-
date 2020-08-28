@@ -1,17 +1,17 @@
 class PostsController < ApplicationController
-  def index
-  end
+#   def index
+#   end
 
-  def new
-  end
+#   def new
+#   end
 
-  def create
-    Post.create(post_params)
-  end
+#   def create
+#     Post.create(post_params)
+#   end
 
-  private
+#   private
 
-  def ppost_params
-    params.require(:post).permit(:name, :image, :text)
-  end
-end
+#   def ppost_params
+#     params.require(:post).permit(:name, :image, :text)
+#   end
+# end
