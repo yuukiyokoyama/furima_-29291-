@@ -1,4 +1,4 @@
-class Genre < ApplicationRecord
+class Genre < ActiveHash::Base
   self.data = [
     { id: 1, name: 'category' },
     { id: 2, name: 'condition' },
