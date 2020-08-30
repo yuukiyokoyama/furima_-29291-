@@ -34,25 +34,17 @@ ActiveRecord::Schema.define(version: 2020_08_28_083623) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "photo", null: false
     t.string "name", null: false
     t.text "explanation", null: false
     t.integer "value", null: false
-    t.integer "category", null: false
-    t.integer "condition", null: false
-    t.integer "delivery_fee", null: false
-    t.integer "shipping_origin", null: false
-    t.integer "days_until_shipping", null: false
+    t.integer "category_id", null: false
+    t.integer "condition_id", null: false
+    t.integer "delivery_fee_id", null: false
+    t.integer "shipping_origin_id", null: false
+    t.integer "days_until_shipping_id", null: false
     t.bigint "user_id", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_items_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_items_on_reset_password_token", unique: true
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
