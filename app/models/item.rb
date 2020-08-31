@@ -6,8 +6,8 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_origin
   belongs_to_active_hash :days_until_shipping
 
-  has_one_attached :image   
-  
+  has_one_attached :image
+
   validates :image, presence: true
   validates :name, presence: true
   validates :explanation, presence: true
@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   validates :delivery_fee, presence: true
   validates :shipping_origin, presence: true
   validates :days_until_shipping, presence: true
-  VALUE_REGEX = /\A[0-9]+\z/
-  validates :value, presence: true, format: { with: VALUE_REGEX}
-  validates_inclusion_of :value, in: 300..9999999
+  VALUE_REGEX = /\A[0-9]+\z/.freeze
+  validates :value, presence: true, format: { with: VALUE_REGEX }
+  validates_inclusion_of :value, in: 300..9_999_999
 end
