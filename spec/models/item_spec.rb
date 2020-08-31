@@ -3,7 +3,7 @@ RSpec.describe Item, type: :model do
   describe Item do
     before do
       @item = FactoryBot.build(:item)
-      @item.image = fixture_file_upload("/files/test_image.jpg")
+      @item.image = fixture_file_upload('/files/test_image.jpg')
     end
 
     describe '商品情報の保存' do
