@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   # before_action :move_to_new, except: [:new, :show]
 
   def index
-    @item = Item.all
+    # @item = Item.includes(:image, :name, :value)
+    @items = Item.all
   end
 
   def new
