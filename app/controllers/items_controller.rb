@@ -1,9 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  # before_action :move_to_new, except: [:new, :show]
 
   def index
-    # @item = Item.includes(:image, :name, :value)
     @items = Item.all
   end
 
