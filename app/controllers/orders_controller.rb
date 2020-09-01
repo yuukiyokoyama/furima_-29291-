@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
+  before_action :set_item, only: [:index]
+
   def index
-    @item = Item.find(params[:item_id])
   end
 
   def new
@@ -12,12 +13,8 @@ class OrdersController < ApplicationController
   end
 end
 
-# def create
-#   Order.create(order_params)
-# end
+private
 
-# private
-# def order_params
-#   params.require(:order).permit(:item).merge(user_id: current_user.id, item_id: params[:item_id])
-# end
-# end
+def set_item
+  @item = Item.find(params[:item_id])
+end
