@@ -27,14 +27,16 @@ class ItemsController < ApplicationController
     end
   end
 
-    def destroy
+  def show
+  end
+
+  def destroy
     if @item.destroy
       redirect_to root_path
     else
       render :show
-    end  
-  end
-  
+    end
+end
 
   private
 

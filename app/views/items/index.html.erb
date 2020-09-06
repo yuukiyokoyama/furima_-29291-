@@ -135,7 +135,9 @@
 
           <%# 商品が売れていればsold outを表示しましょう %>
           <div class='sold-out'>
+          <% if item.item_purchase.present?%>
             <span>Sold Out!!</span>
+          <%end%>
           </div>
           <%# //商品が売れていればsold outを表示しましょう %>
 
@@ -159,8 +161,9 @@
 
       <%# 商品がない場合のダミー %>
       <%# 商品がある場合は表示されないようにしましょう %>
+      <%if @items.length == 0 %>
       <li class='list'>
-        <%= link_to '#' do %>
+        <%= link_to do %>
         <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" %>
         <div class='item-info'>
           <h3 class='item-name'>
@@ -174,7 +177,8 @@
             </div>
           </div>
         </div>
-        <% end %>
+      <% end %>
+      <% end %>
       </li>
       <%# //商品がある場合は表示されないようにしましょう %>
       <%# /商品がない場合のダミー %>
