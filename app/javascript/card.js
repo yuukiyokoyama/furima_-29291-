@@ -13,8 +13,6 @@ const pay = () => {
       exp_month: document.getElementById("card-exp-month").value,
       exp_year: `20${document.getElementById("card-exp-year").value}`,
     };
-    console.log(card)
-
 
     Payjp.createToken(card, (status, response) => {
      

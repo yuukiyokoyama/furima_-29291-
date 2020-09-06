@@ -9,11 +9,12 @@ RSpec.describe UserPurchase, type: :model do
 
     describe '購入機能' do
       context '購入者情報の保存がうまくいくとき' do
-        it 'postal_code、prefectures_id、city、address、phone_numberが存在すれば商品情報の保存がうまくいく' do
+        it 'postal_code、prefectures_id、city、address、phone_number、tokenが存在すれば商品情報の保存がうまくいく' do
           expect(@user_purchase).to be_valid
         end
       end
     end
+
 
     context '購入者情報の保存がうまくいかないとき' do
       it 'postal_codeが空だと登録できない' do
@@ -41,6 +42,22 @@ RSpec.describe UserPurchase, type: :model do
         @user_purchase.valid?
         expect(@user_purchase.errors.full_messages).to include("Phone number can't be blank")
       end
+      it 'tokenが空だと登録できない' do
+        @user_purchase.token = ''
+        @user_purchase.valid?
+        expect(@user_purchase.errors.full_messages).to include("Token can't be blank")
+      end
+      it 'postal_codeに-が含まれてないと登録できない' do
+        @user_purchase.postal_code = '2102222'
+        @user_purchase.valid?
+        expect(@user_purchase.errors.full_messages).to include('Postal code is invalid')
+      end
+      it 'phone_numberが11桁以下であれば登録できない' do
+        @user_purchase.phone_number = '080465748480'
+        @user_purchase.valid?
+        expect(@user_purchase.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
+      end
     end
   end
 end
+
