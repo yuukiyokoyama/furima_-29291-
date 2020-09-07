@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  username: root
+  username: yuuki
   password: <%= ENV['yokoko0903'] %>
   socket: /var/lib/mysql/mysql.sock
