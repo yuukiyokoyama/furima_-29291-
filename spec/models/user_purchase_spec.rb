@@ -15,7 +15,6 @@ RSpec.describe UserPurchase, type: :model do
       end
     end
 
-
     context '購入者情報の保存がうまくいかないとき' do
       it 'postal_codeが空だと登録できない' do
         @user_purchase.postal_code = ''
