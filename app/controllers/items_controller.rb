@@ -19,22 +19,20 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params)
-    if @item.save
+    if @item.update(item_params)
       redirect_to item_path
     else
       render :edit
     end
   end
 
-    def destroy
+  def destroy
     if @item.destroy
       redirect_to root_path
     else
       render :show
-    end  
-  end
-  
+    end
+end
 
   private
 

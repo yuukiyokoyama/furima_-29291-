@@ -97,7 +97,7 @@ Things you may want to cover:
 | address | string | null: false |
 | building_name | string |  |
 | phone_number | string | null: false |
-| item_purchasere | references | null: false,foreign_key: true |
+| item_purchase | references | null: false,foreign_key: true |
 
 ### Association
 - belongs_to:item_purchase
