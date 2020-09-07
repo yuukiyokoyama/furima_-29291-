@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
+  database: furima_”29291”_production
   username: yuuki
   password: <%= ENV['yokoko0903'] %>
   socket: /var/lib/mysql/mysql.sock
