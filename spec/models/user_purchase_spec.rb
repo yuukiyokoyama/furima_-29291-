@@ -59,4 +59,3 @@ RSpec.describe UserPurchase, type: :model do
     end
   end
 end
-
