@@ -10,9 +10,9 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_origin
   belongs_to_active_hash :days_until_shipping
 
-  has_one_attached :image
+  has_many_attached :images
 
-  validates :image, presence: true
+  validates :images, presence: true
   validates :name, presence: true
   validates :explanation, presence: true
   validates :category_id, numericality: { only_integer: 1 }
