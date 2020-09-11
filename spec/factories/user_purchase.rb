@@ -5,6 +5,6 @@ FactoryBot.define do
     city { '港区赤坂' }
     address { '1-2-3' }
     phone_number { '08046574848' }
-    token {'aaaaaaaaaaaa'}
+    token { 'aaaaaaaaaaaa' }
   end
 end
